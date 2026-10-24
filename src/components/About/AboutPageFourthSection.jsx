@@ -1,4 +1,3 @@
-import "/Users/predragpejovic/WoodpeckerWebReact/src/globals.css";
 import backgroundImage from "../../assets/13-2.jpg";
 
 const AboutPageFourthSection = () => {

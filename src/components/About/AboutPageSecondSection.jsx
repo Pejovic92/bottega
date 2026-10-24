@@ -1,4 +1,3 @@
-import "/Users/predragpejovic/WoodpeckerWebReact/src/globals.css";
 
 const AboutPageSecondSection = () => {
   return (

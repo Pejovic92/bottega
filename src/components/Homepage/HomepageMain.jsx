@@ -1,4 +1,3 @@
-import "/Users/predragpejovic/WoodpeckerWebReact/src/globals.css"
 import designLogo from '../../assets/design-icon.png'
 import consultLogo from '../../assets/consult-icon.png'
 import makeLogo from '../../assets/make-icon.png'

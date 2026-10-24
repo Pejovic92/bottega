@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        'junge': ['Junge'],
-        'bree-serif': ['Bree Serif'],
-        'ledger':['Ledger'],
-        'neuton': ['Neuton']
+        'junge': ['Junge', 'serif'],
+        'bree-serif': ['"Bree Serif"', 'serif'],
+        'ledger': ['Ledger', 'serif'],
+        'neuton': ['Neuton', 'serif']
       },
       blur:{
         '1': '1px',
