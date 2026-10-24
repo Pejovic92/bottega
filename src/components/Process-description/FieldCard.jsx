@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import "../../index.css";
+import { useState, useEffect } from "react";
 import Logo from "../../assets/home.gif";
 import { useInView } from "./useInView";
 import cardImage from "../../assets/process-description-assets/room.png";

@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import HomepageMain from "./components/Homepage/HomepageMain";
 import HomepageAdditionalDescription from "./components/Homepage/HomepageAdditionalDescription";
@@ -7,7 +6,6 @@ import AboutPageFirstSection from "./components/About/AboutPageFirstSection";
 import AboutPageSecondSection from "./components/About/AboutPageSecondSection";
 import AboutPageThirdSection from "./components/About/AboutPageThirdSection";
 import AboutPageFourthSection from "./components/About/AboutPageFourthSection";
-import Scene from "./components/3dModel/Scene";
 import Card from "./components/Process-description/FieldCard";
 
 const App = () => {
@@ -28,12 +26,8 @@ const App = () => {
       <AboutPageSecondSection />
       <AboutPageFourthSection />
       <AboutPageThirdSection />
-      {/* <Scene /> */}
       <div className="w-full flex justify-between">
         <Card />
-        {/* <Card />
-        <Card />
-        <Card /> */}
       </div>
     </div>
   );

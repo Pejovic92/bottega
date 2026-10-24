@@ -1,5 +1,5 @@
 // src/RectanglesGrid.jsx
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Rectangle from "./Rectangles";
 
 const RectanglesGrid = () => {
