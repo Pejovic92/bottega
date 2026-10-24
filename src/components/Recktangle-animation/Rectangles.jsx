@@ -1,7 +1,6 @@
 // src/Rectangle.jsx
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
-import "../../../src/index.css"; // Adjust the path if necessary
 
 const Rectangle = ({
   text = "",
