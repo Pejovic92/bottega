@@ -1,0 +1,86 @@
+/* index.css or your main CSS file */
+
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS for Rotation and Movement Animation */
+.rectangle {
+  position: absolute;
+}
+
+@keyframes rotateThenMove {
+  0% {
+    transform: translate(var(--delta-x), var(--delta-y)) rotate(0deg);
+  }
+  50% {
+    transform: translate(var(--delta-x), var(--delta-y)) rotate(360deg);
+  }
+  51% {
+    transform: translate(var(--delta-x), var(--delta-y)) rotate(360deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(360deg);
+  }
+}
+
+.rectangle.animate {
+  animation: rotateThenMove var(--total-duration) linear forwards;
+  animation-fill-mode: backwards;
+}
+
+@layer utilities {
+  .short-top-border::before {
+    @apply block w-3/5 border-t-[2.5px] border-red-500 mx-auto mb-4 opacity-40 blur-2;
+    content: "";
+  }
+}
+.custom-text-k::after {
+  content: "Kvalitetni materijali i precizna izrada";
+  @apply block text-sm text-gray-400  text-center mt-2;
+}
+.custom-text-f::after {
+  content: "Praktičan dizajn prilagođen vašim potrebama.";
+  @apply block text-sm text-gray-400  text-center mt-2;
+}
+.custom-text-p::after {
+  content: "Rešenja za svaciji budžet";
+  @apply block text-sm text-gray-400  text-center mt-4;
+}
+.custom-text-ps::after {
+  content: "Vaše zadovoljstvo je naš prioritet.";
+  @apply block text-sm text-gray-400  text-center mt-2;
+}
+.custom-text-kr::after {
+  content: "Inovativna rešenja za jedinstven dizajn.";
+  @apply block text-sm  text-gray-400  text-center mt-2;
+}
+
+/* Flip card container */
+.flip-card-container {
+  @apply w-[300px] h-[500px] mx-auto my-10;
+  perspective: 1000px;
+}
+
+/* Flip card */
+.flip-card {
+  @apply relative w-full h-full;
+  transform-style: preserve-3d;
+  transition: transform 0.7s;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Flip card sides */
+.flip-card-front,
+.flip-card-back {
+  @apply absolute w-full h-full;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
