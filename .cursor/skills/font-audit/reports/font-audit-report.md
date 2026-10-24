@@ -2,7 +2,7 @@
 
 Generated: 2026-06-03 12:52:31 UTC
 
-Project: WoodpeckerWebReact
+Project: Bottega
 
 ## Summary
 

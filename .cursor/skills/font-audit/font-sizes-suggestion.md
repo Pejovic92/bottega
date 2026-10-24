@@ -1,9 +1,9 @@
 ---
 name: font-sizes-suggestion
-description: Analyzes WoodpeckerWebReact typography and suggests responsive font-size usage for phones, tablets, laptops, and large monitors. Use when implementing responsive text, refactoring Tailwind font sizes, or planning a mobile-first typography system.
+description: Analyzes Bottega typography and suggests responsive font-size usage for phones, tablets, laptops, and large monitors. Use when implementing responsive text, refactoring Tailwind font sizes, or planning a mobile-first typography system.
 ---
 
-# Responsive Font Size Guidelines — WoodpeckerWebReact
+# Responsive Font Size Guidelines — Bottega
 
 Guidelines for making typography work across **phones**, **tablets/laptops**, and **large monitors**, based on the current codebase audit (see `reports/font-audit-report.md`).
 

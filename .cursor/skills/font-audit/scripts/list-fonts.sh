@@ -25,7 +25,7 @@ run_search() {
   echo ""
   echo "Generated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
   echo ""
-  echo "Project: WoodpeckerWebReact"
+  echo "Project: Bottega"
   echo ""
 
   echo "## Summary"

@@ -1,6 +1,6 @@
 ---
 name: font-audit
-description: Detects and lists all fonts used in the WoodpeckerWebReact project. Scans CSS imports, Tailwind config, component class names, and inline styles. Writes results to a markdown report file. Use when the user asks about fonts, typography audit, or font inventory.
+description: Detects and lists all fonts used in the Bottega project. Scans CSS imports, Tailwind config, component class names, and inline styles. Writes results to a markdown report file. Use when the user asks about fonts, typography audit, or font inventory.
 ---
 
 # Font Audit Agent
