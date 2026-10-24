@@ -1,4 +1,3 @@
-import "/Users/predragpejovic/WoodpeckerWebReact/src/globals.css";
 import backgroundImage from "../../assets/wardrobeAboutImage.jpeg";
 
 const AboutPageFirstSection = () => {

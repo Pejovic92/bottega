@@ -1,5 +1,3 @@
-import "/Users/predragpejovic/WoodpeckerWebReact/src/globals.css"
-import homepageWardrobeSketch from './../../assets/homepagewardrobeSketch.png'
 import HomepageCTAImage from '../../assets/Fitted-Wardrobes.jpg'
 
 const HomepageCTA = () => {

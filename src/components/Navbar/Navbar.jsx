@@ -1,6 +1,5 @@
 import React from 'react'
 import Logo from "../../assets/logo.png"
-import "/Users/predragpejovic/WoodpeckerWebReact/src/globals.css"
 
 
 const Navbar = () => {

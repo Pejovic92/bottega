@@ -1,5 +1,4 @@
-import "/Users/predragpejovic/WoodpeckerWebReact/src/globals.css"
-import homepageWardrobeSketch from './../../assets/homepagewardrobeSketch.png'
+import homepageWardrobeSketch from './../../assets/homepageWardrobeSketch.png'
 import arrowUp from '../../assets/right-up.png'
 
 const HomepageAdditionalDescription = () => {

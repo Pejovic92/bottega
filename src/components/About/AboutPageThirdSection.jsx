@@ -1,4 +1,3 @@
-import "/Users/predragpejovic/WoodpeckerWebReact/src/globals.css";
 import RectanglesGrid from "../Recktangle-animation/RectanglesGrid";
 
 const AboutPageThirdSection = () => {
