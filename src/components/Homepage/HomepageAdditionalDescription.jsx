@@ -1,31 +1,18 @@
-import homepageWardrobeSketch from './../../assets/homepageWardrobeSketch.png'
-import arrowUp from '../../assets/right-up.png'
+import wardrobeSketch from "../../assets/homepageWardrobe.png";
 
+// Only the technical drawing is left here: the text moved into the hero (HomepageMain).
 const HomepageAdditionalDescription = () => {
   return (
-<div className=" flex justify-between">
+    <section className="flex justify-center bg-paper px-4 py-16 sm:px-8 lg:px-16 lg:py-24">
+      <img
+        src={wardrobeSketch}
+        alt="Tehnički crtež ugradnog ormara sa merama"
+        width={500}
+        height={500}
+        className="h-auto w-full max-w-md xl:max-w-[500px]"
+      />
+    </section>
+  );
+};
 
-<div className="border border-black w-[900px] h-[500px] ml-16 mt-20 flex flex-col space-y-[56px] font-ledger text-[25px] text-center" >
-
-  <span className=" border border-black w-[750px]  mx-auto"> Nudimo visokokvalitetne, prilagođene ormare od iverice i pločastih materijala,
-  dizajnirane da se idealno uklope u vaš enterijer i zadovolje sve vaše potrebe.</span>
-  <span className=" border border-black w-[750px]  mx-auto"> Kreirajte prostor po svojoj meri uz našu pomoć i pregledajte ga unapred u 3D formatu</span>
-  <span className=" border border-black w-[750px]  mx-auto"> Za sva pitanja i savete, slobodno nas kontaktirajte</span>
-  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-[30px] w-1/5 mx-auto">
-  Kontakt
-</button>
-    
-  </div>
-
-  <div className="border border-black w-[500px] h-[600px] mr-16 " >
-
-     <img src={arrowUp} className="w-20 h-20 opacity-35 relative left-[420px]"/>
-     <img src={homepageWardrobeSketch} className=""/>
-
-</div>
-
-</div>
-
-  )
-}
-export default HomepageAdditionalDescription
+export default HomepageAdditionalDescription;

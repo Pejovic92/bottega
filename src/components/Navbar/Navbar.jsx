@@ -1,28 +1,25 @@
-import Logo from "../../assets/logo.png"
+import Logo from "../../assets/logo.png";
 
-
+// Interim responsive version: links wrap under the logo on phones.
+// The mobile menu comes with the layout redesign.
+// Text and the divider follow the parent's text color.
 const Navbar = () => {
   return (
-    <div >
-      <div className=" container flex justify-between items-center max-w-none h-[80px] "> 
+    <nav className="px-4 sm:px-8 lg:px-16">
+      <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-b-2 border-current py-4 sm:h-20 sm:py-0">
+        <a href="#">
+          <img src={Logo} alt="Bottega" width={40} height={40} />
+        </a>
 
-        <div className=" pl-[64px]">
-          <img src={Logo}/>
-        </div>
-
-        <div className=" pr-[64px] text-[18px] font-junge"> 
-        <ul className="flex space-x-[48px] " >
-      <li> <a  href="#">Pocetna</a></li>
-      <li> <a href="#">O nama</a></li>
-      <li> <a href="#">Izrada: korak po korak</a></li>
-      <li> <a href="#">Kontakt</a></li>
-      </ul>  
-        </div>
-   
+        <ul className="flex flex-wrap gap-x-4 gap-y-1 font-junge text-sm sm:gap-x-8 sm:text-base lg:gap-x-12 lg:text-[18px]">
+          <li><a href="#">Početna</a></li>
+          <li><a href="#">O nama</a></li>
+          <li><a href="#">Izrada: korak po korak</a></li>
+          <li><a href="#">Kontakt</a></li>
+        </ul>
       </div>
-      <div className='border-b-2 border-black ml-16 mr-16'></div> 
-     
-    </div>
-  )
-}
-export default Navbar
+    </nav>
+  );
+};
+
+export default Navbar;

@@ -8,6 +8,7 @@ export default {
       fontFamily:{
         'junge': ['Junge', 'serif'],
         'bree-serif': ['"Bree Serif"', 'serif'],
+        'fraunces': ['Fraunces', 'serif'],
         'ledger': ['Ledger', 'serif'],
         'neuton': ['Neuton', 'serif']
       },
@@ -91,7 +92,13 @@ export default {
       ]
       },
       colors: {
-        headlinesColor: 'rgba(71, 72, 83, 1)'
+        headlinesColor: 'rgba(71, 72, 83, 1)',
+        paper: '#F5F1EA',
+        sage: '#BABEAC',
+        wood: {
+          DEFAULT: '#8B5E3C',
+          dark: '#744C2F',
+        },
       },
       textShadow:{
         'custom-medium': '4px 5px 5px rgba(0, 0, 0, 0.5)'
