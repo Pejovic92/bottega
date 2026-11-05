@@ -35,19 +35,19 @@ function FieldCard() {
         <div className="flip-card-front flex flex-col ">
           {/* Front Content */}
 
-          <div className="border  w-full h-[20%] flex justify-center pt-2 bg-red-100">
+          <div className="w-full h-[20%] flex justify-center pt-2 bg-red-100">
             <img
               src={cardImage}
               className="w-[220px] h-40 border border-red-300 rounded-3xl object-contain object-center absolute top-10 left-1/2 transform -translate-x-1/2 "
             />
           </div>
-          <div className="border w-full  h-[65%] font-serif text-xl text-center pt-32  bg-red-200">
+          <div className="w-full  h-[65%] font-serif text-xl text-center pt-32  bg-red-200">
             <p className="text-36">Izlazak na teren</p>
             <p className="pt-10 font-neuton">
               Put do vaseg namestaja pocinje ovde
             </p>
           </div>
-          <div className="border w-full h-[15%]  bg-red-300 flex  items-center justify-between">
+          <div className="w-full h-[15%]  bg-red-300 flex  items-center justify-between">
             <img src={Logo} className="w-12 h-12 ml-3" />
             <div className="flex justify-normal mr-2">
               <button className="text-16 font-junge" onClick={handleFlip}>

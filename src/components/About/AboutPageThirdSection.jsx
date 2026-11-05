@@ -2,7 +2,7 @@ import RectanglesGrid from "../Recktangle-animation/RectanglesGrid";
 
 const AboutPageThirdSection = () => {
   return (
-    <div className=" mt-[64px] flex items-center justify-between border border-red-600 px-16 h-[700px] mb-16">
+    <div className=" mt-[64px] flex items-center justify-between px-16 h-[700px] mb-16">
       <RectanglesGrid />
       <div className="w-full max-w-[900px]   flex flex-col">
         {/* Header Section */}
