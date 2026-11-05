@@ -30,6 +30,14 @@
   animation-fill-mode: backwards;
 }
 
+/* Hero heading: each word slides in from the left (the delays are set in HomepageMain) */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+}
+
 @layer utilities {
   .short-top-border::before {
     @apply block w-3/5 border-t-[2.5px] border-red-500 mx-auto mb-4 opacity-40 blur-2;
