@@ -38,6 +38,14 @@
   }
 }
 
+/* Hero step names: each fades in from a little to the left (the delays are set in HomepageMain) */
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateX(-2.5rem);
+  }
+}
+
 @layer utilities {
   .short-top-border::before {
     @apply block w-3/5 border-t-[2.5px] border-red-500 mx-auto mb-4 opacity-40 blur-2;
