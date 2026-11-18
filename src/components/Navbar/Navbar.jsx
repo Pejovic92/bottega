@@ -6,11 +6,12 @@ import Logo from "../../assets/bottega-logo-header.png";
 // The mobile menu comes with the layout redesign.
 // It sits on its own off-white band (paler than the paper token): the edge where the hero's green
 // begins replaces the old divider line, with a soft shadow to lift it off the green (it sits above
-// the hero's 3D model, hence z-10). The text follows the parent's text color.
+// the hero's 3D model, hence z-10). The text follows the parent's text color, and the logo and
+// links sit in the page container, so they line up with the sections below.
 const Navbar = () => {
   return (
-    <nav className="relative z-10 bg-[#F9F7F2] px-4 shadow-[0_2px_12px_rgba(38,39,46,0.15)] sm:px-8 lg:px-16">
-      <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 py-4 sm:h-20 sm:py-0">
+    <nav className="relative z-10 bg-[#F9F7F2] shadow-[0_2px_12px_rgba(38,39,46,0.15)]">
+      <div className="page-container flex flex-wrap items-center justify-between gap-x-8 gap-y-3 py-4 sm:h-20 sm:py-0">
         <a href="#">
           <img src={Logo} alt="Bottega Furniture" width={553} height={160} className="h-9 w-auto sm:h-10 lg:h-12" />
         </a>

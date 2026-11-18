@@ -1,14 +1,14 @@
 import Navbar from "./components/Navbar/Navbar";
 import HomepageMain from "./components/Homepage/HomepageMain";
 import HomepageBackgroundVideo from "./components/Homepage/HomepageBackgroundVideo";
-// Hidden while the homepage is being redesigned.
-// import HomepageAdditionalDescription from "./components/Homepage/HomepageAdditionalDescription";
-// import HomepageCTA from "./components/Homepage/HomepageCTA";
-// import AboutPageFirstSection from "./components/About/AboutPageFirstSection";
-// import AboutPageSecondSection from "./components/About/AboutPageSecondSection";
+import HomepageStatement from "./components/Homepage/HomepageStatement";
+import HomepageCTA from "./components/Homepage/HomepageCTA";
+import AboutPageFirstSection from "./components/About/AboutPageFirstSection";
+import AboutPageSecondSection from "./components/About/AboutPageSecondSection";
+import AboutPageFourthSection from "./components/About/AboutPageFourthSection";
+import HomepageProcess from "./components/Homepage/HomepageProcess";
+// Hidden for now ("Segmentne izrade").
 // import AboutPageThirdSection from "./components/About/AboutPageThirdSection";
-// import AboutPageFourthSection from "./components/About/AboutPageFourthSection";
-// import Card from "./components/Process-description/FieldCard";
 
 const App = () => {
   return (
@@ -22,18 +22,15 @@ const App = () => {
         <HomepageMain />
         <HomepageBackgroundVideo />
       </div>
-
-      {/* Hidden while the homepage is being redesigned.
-      <HomepageAdditionalDescription />
+      <HomepageStatement />
       <HomepageCTA />
       <AboutPageFirstSection />
       <AboutPageSecondSection />
       <AboutPageFourthSection />
+      {/* Hidden for now ("Segmentne izrade").
       <AboutPageThirdSection />
-      <div className="w-full flex justify-between">
-        <Card />
-      </div>
       */}
+      <HomepageProcess />
     </div>
   );
 };
