@@ -1,4 +1,5 @@
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useRef } from "react";
+import useInView from "../../hooks/useInView";
 
 const words = ["Ideja", "Dizajn", "Izrada"];
 
@@ -15,18 +16,6 @@ const steps = [
 // The words slide in from the left one after another, then the three steps fade in the same way,
 // and both play again every time they scroll back into view; visitors who prefer reduced motion
 // see everything in place right away.
-const useInView = (ref) => {
-  const [inView, setInView] = useState(true);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting));
-    observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [ref]);
-
-  return inView;
-};
-
 const HomepageMain = () => {
   const headingRef = useRef(null);
   const stepsRef = useRef(null);
