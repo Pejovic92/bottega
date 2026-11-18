@@ -5,6 +5,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  /* The page's content width: side margins of 16px on phones, 32px on tablets and 64px on
+     desktop, and centred once the window is wider than 1440px. The navbar uses it too. Section
+     backgrounds still run edge to edge; only what is inside them uses this. */
+  .page-container {
+    @apply mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-16;
+  }
+}
+
 /* Custom CSS for Rotation and Movement Animation */
 .rectangle {
   position: absolute;
@@ -46,31 +55,12 @@
   }
 }
 
-@layer utilities {
-  .short-top-border::before {
-    @apply block w-3/5 border-t-[2.5px] border-red-500 mx-auto mb-4 opacity-40 blur-2;
-    content: "";
+/* Statement under the hero: fades in and rises a little as it scrolls into view */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
   }
-}
-.custom-text-k::after {
-  content: "Kvalitetni materijali i precizna izrada";
-  @apply block text-sm text-gray-400  text-center mt-2;
-}
-.custom-text-f::after {
-  content: "Praktičan dizajn prilagođen vašim potrebama.";
-  @apply block text-sm text-gray-400  text-center mt-2;
-}
-.custom-text-p::after {
-  content: "Rešenja za svaciji budžet";
-  @apply block text-sm text-gray-400  text-center mt-4;
-}
-.custom-text-ps::after {
-  content: "Vaše zadovoljstvo je naš prioritet.";
-  @apply block text-sm text-gray-400  text-center mt-2;
-}
-.custom-text-kr::after {
-  content: "Inovativna rešenja za jedinstven dizajn.";
-  @apply block text-sm  text-gray-400  text-center mt-2;
 }
 
 /* Flip card container */
