@@ -1,28 +1,34 @@
 import { useRef, useState } from "react";
-import measuring800 from "../../assets/process/step1-measuring-800.jpg";
-import measuring1400 from "../../assets/process/step1-measuring-1400.jpg";
+import apartment800 from "../../assets/process/step1-apartment-800.jpg";
+import apartment1400 from "../../assets/process/step1-apartment-1400.jpg";
 import sketch from "../../assets/sketch.jpeg";
-import materials800 from "../../assets/process/step3-materials-800.jpg";
-import materials1400 from "../../assets/process/step3-materials-1400.jpg";
-import workshop800 from "../../assets/process/step4-workshop-800.jpg";
-import workshop1400 from "../../assets/process/step4-workshop-1400.jpg";
-import installation800 from "../../assets/process/step5-installation-800.jpg";
-import installation1400 from "../../assets/process/step5-installation-1400.jpg";
+import decors800 from "../../assets/process/chipboard_options2-800.jpg";
+import decors1215 from "../../assets/process/chipboard_options2.jpg";
+import boards800 from "../../assets/process/step4-boards-800.jpg";
+import boards1400 from "../../assets/process/step4-boards-1400.jpg";
+import kitchen800 from "../../assets/process/step5-kitchen-800.jpg";
+import kitchen1400 from "../../assets/process/step5-kitchen-1400.jpg";
 import finished800 from "../../assets/process/step6-finished-800.jpg";
 import finished1400 from "../../assets/process/step6-finished-1400.jpg";
 
 // The road from the first visit to the finished piece. Draft text, to be refined.
-// Step 2 shows a SketchUp design (sketch.jpeg). The other photos are free stock images from Pexels
-// (pexels.com/license: commercial use, no credit required), picked as one bright, natural-wood
-// series; they stand in until there are photos of Bottega's own work:
-// pexels.com/photo/ 1 5691675, 3 6583355, 4 7480448, 5 1249610, 6 6782465.
+// Step 2 shows a SketchUp design (sketch.jpeg) and step 3 a fan of board decors
+// (chipboard_options2.jpg). Steps 1, 4 and 5 are photos of a real job, added in place of stock
+// images: an empty kitchen before measuring (appartment.jpeg, full frame, retouched so only the
+// walls show: a cabinet carcass, a loose board and a cable in the bottom-right corner were painted
+// out; the result is appartment-retouched.jpeg), edge-banded oak-decor strips on the bench
+// (workshop_assembling.jpeg, cut high enough to keep the drill battery and tools in view) and the
+// kitchen being fitted (kitchen_montage2.jpeg). The last two are portrait shots, cut to 4:3 to fit
+// the frame. All three are resized to 800 and 1400 px. Step 6 is
+// still a free Pexels stand-in (pexels.com/license: commercial use, no credit required):
+// pexels.com/photo/6782465.
 const steps = [
   {
     title: "Izlazak na teren",
     lead: "Put do vašeg nameštaja počinje ovde.",
     text: "Dolazimo kod vas, upoznajemo prostor i precizno ga merimo. Razgovaramo o vašim željama, navikama i budžetu, jer od toga zavisi svaki sledeći korak.",
-    image: { src: measuring1400, srcSet: `${measuring800} 800w, ${measuring1400} 1400w`, position: "50% 45%" },
-    alt: "Merenje zida metrom",
+    image: { src: apartment1400, srcSet: `${apartment800} 800w, ${apartment1400} 1400w` },
+    alt: "Prazna kuhinja pre izrade: zidovi sa pločicama, utičnicama i priključcima za vodu",
   },
   {
     title: "Idejno rešenje i 3D prikaz",
@@ -35,22 +41,22 @@ const steps = [
     title: "Usaglašavanje i ponuda",
     lead: "Svaki detalj po vašoj meri.",
     text: "Zajedno doterujemo rešenje: dekore, ručke, okove, police i fioke. Kad je sve dogovoreno, dobijate konačnu ponudu i rok izrade.",
-    image: { src: materials1400, srcSet: `${materials800} 800w, ${materials1400} 1400w` },
-    alt: "Biranje uzoraka drveta i materijala",
+    image: { src: decors1215, srcSet: `${decors800} 800w, ${decors1215} 1215w` },
+    alt: "Lepeza uzoraka pločastih materijala u različitim tonovima drveta",
   },
   {
     title: "Izrada u radionici",
     lead: "Preciznost u svakom delu.",
     text: "Kada je sve dogovoreno, u radionici izrađujemo i sklapamo vaš nameštaj i pripremamo ga za isporuku.",
-    image: { src: workshop1400, srcSet: `${workshop800} 800w, ${workshop1400} 1400w` },
-    alt: "Obrada ploče na mašini u svetloj radionici",
+    image: { src: boards1400, srcSet: `${boards800} 800w, ${boards1400} 1400w` },
+    alt: "Isečene letvice od iverice u dekoru hrasta, sa nalepljenom kant trakom, na radnom stolu okružene alatom",
   },
   {
     title: "Isporuka i montaža",
     lead: "Spremno za upotrebu.",
     text: "Dovozimo i montiramo nameštaj, podešavamo vrata i fioke i ostavljamo prostor uredan.",
-    image: { src: installation1400, srcSet: `${installation800} 800w, ${installation1400} 1400w` },
-    alt: "Montaža: pričvršćivanje ploče aku-bušilicom",
+    image: { src: kitchen1400, srcSet: `${kitchen800} 800w, ${kitchen1400} 1400w` },
+    alt: "Kuhinja u montaži: visoki regal sa policama u dekoru hrasta, pored korpusa donjih i gornjih elemenata",
   },
   {
     title: "Uživajte u novom prostoru",
