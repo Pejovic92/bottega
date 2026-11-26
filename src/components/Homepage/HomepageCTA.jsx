@@ -3,7 +3,8 @@ import HomepageCTAImage from "../../assets/Fitted-Wardrobes.jpg";
 // Text on the left, the photo on the right (on phones: text first, then the photo). Both sit in
 // the page container, so they keep a margin from the window's edges, and the photo has rounded
 // corners; the background still runs edge to edge.
-// On desktop the row is 36vw tall, between 388px and 572px. The button matches the hero's.
+// On desktop the row is 36vw tall, between 388px and 572px. The button matches the hero's and is a
+// link down to the products section (#proizvodi).
 const HomepageCTA = () => {
   return (
     <section className="bg-[#F9F7F2] py-10 text-[#26272E] sm:py-12 lg:py-16">
@@ -13,9 +14,12 @@ const HomepageCTA = () => {
             Zainteresovani ste za naše proizvode?
           </h2>
           <p className="max-w-md text-[15px] xl:text-base">Istražite koje proizvode možemo izraditi za vas, po vašoj meri.</p>
-          <button className="mt-2 h-[58px] rounded-full border-2 border-[#5E3D25] px-[52px] text-[15px] font-bold text-[#5E3D25] transition-colors hover:bg-[#5E3D25] hover:text-white">
+          <a
+            href="#proizvodi"
+            className="mt-2 inline-flex h-[58px] items-center rounded-full border-2 border-[#5E3D25] px-[52px] text-[15px] font-bold text-[#5E3D25] transition-colors hover:bg-[#5E3D25] hover:text-white"
+          >
             Pogledaj proizvode
-          </button>
+          </a>
         </div>
 
         <div className="relative h-64 overflow-hidden rounded-md sm:h-80 lg:h-auto">

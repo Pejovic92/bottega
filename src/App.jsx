@@ -6,6 +6,7 @@ import HomepageCTA from "./components/Homepage/HomepageCTA";
 import AboutPageFirstSection from "./components/About/AboutPageFirstSection";
 import AboutPageSecondSection from "./components/About/AboutPageSecondSection";
 import AboutPageFourthSection from "./components/About/AboutPageFourthSection";
+import HomepageProducts from "./components/Homepage/HomepageProducts";
 import HomepageProcess from "./components/Homepage/HomepageProcess";
 // Hidden for now ("Segmentne izrade").
 // import AboutPageThirdSection from "./components/About/AboutPageThirdSection";
@@ -30,6 +31,7 @@ const App = () => {
       {/* Hidden for now ("Segmentne izrade").
       <AboutPageThirdSection />
       */}
+      <HomepageProducts />
       <HomepageProcess />
     </div>
   );
