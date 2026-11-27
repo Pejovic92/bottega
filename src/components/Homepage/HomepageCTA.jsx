@@ -3,8 +3,8 @@ import HomepageCTAImage from "../../assets/Fitted-Wardrobes.jpg";
 // Text on the left, the photo on the right (on phones: text first, then the photo). Both sit in
 // the page container, so they keep a margin from the window's edges, and the photo has rounded
 // corners; the background still runs edge to edge.
-// On desktop the row is 36vw tall, between 388px and 572px. The button matches the hero's and is a
-// link down to the products section (#proizvodi).
+// On desktop the row is 36vw tall, between 388px and 572px. The button is outlined and, like the
+// hero's "Pogledajte šta izrađujemo" link, leads down to the products section (#proizvodi).
 const HomepageCTA = () => {
   return (
     <section className="bg-[#F9F7F2] py-10 text-[#26272E] sm:py-12 lg:py-16">

@@ -45,7 +45,8 @@ ProductCard.propTypes = {
 // A grid of equal cards on the hero's lighter green, so the section stands apart from the
 // off-white band above and the paper band below. Phones get one column, tablets two, desktop
 // three. The cards wrap and centre, so a last row that isn't full sits in the middle instead of
-// leaving a gap on the right. The "Pogledaj proizvode" button above links here (#proizvodi).
+// leaving a gap on the right. The hero's "Pogledajte šta izrađujemo" link and the "Pogledaj
+// proizvode" button above link here (#proizvodi).
 // No product is the main one, so every card gets the same size, photo format and about the same
 // length of text. The list (and where the photos come from) is in src/data/products.js, shared
 // with the footer and the quote form.
