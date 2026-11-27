@@ -7,16 +7,25 @@ import { Box3, MathUtils, NeutralToneMapping, Vector3 } from "three";
 import modelUrl from "../../assets/wardrobe_25122.glb?url";
 
 // The model is turned so the open side of the corner faces the camera, and the camera looks at it
-// a little from above.
+// straight on, level with its middle, so its upright edges stay upright instead of leaning in
+// towards the bottom as they do when it's seen from above. If this changes, render the hero's
+// still (wardrobe-model-poster.webp) again; the same goes for the shadow and the lights.
 const MODEL_TURN = MathUtils.degToRad(45);
 const VIEW_AZIMUTH = 0;
-const VIEW_ELEVATION = MathUtils.degToRad(12);
+const VIEW_ELEVATION = 0;
 // Visitors can turn the wardrobe all the way round, and tilt the view from almost straight down
 // to eye level, but never below the floor.
 const MIN_POLAR = MathUtils.degToRad(20);
 const MAX_POLAR = MathUtils.degToRad(90);
 // Share of the canvas height the wardrobe fills.
 const FILL = 0.74;
+// The soft shadow on the floor. It sits a hair below the wardrobe (a share of its height): level
+// with it, the shadow's camera would cut off the bottom panel, which casts most of the shadow. It
+// takes in only the lowest tenth of the wardrobe, so shelves higher up don't thin it out.
+const SHADOW_DROP = 0.005;
+const SHADOW_REACH = 0.1;
+const SHADOW_OPACITY = 0.9;
+const SHADOW_BLUR = 4;
 // The model's animation lasts 3.3 s; slowed down ten times it takes as long as the video's loop.
 const ANIMATION_SPEED = 0.1;
 
@@ -26,9 +35,15 @@ const Wardrobe = ({ animate, onReady }) => {
   const { actions } = useAnimations(animations, group);
   const camera = useThree((state) => state.camera);
   const controls = useThree((state) => state.controls);
-  // Turn the model before measuring it, so the frame and the shadow fit the turned wardrobe.
+  // Turn the model before measuring it, so the frame and the shadow fit the turned wardrobe. Then
+  // stand it on the floor (y = 0) and centre it over the origin: ContactShadows blurs its shadow on
+  // a plane at the world's origin, so a shadow anywhere else slides off with every blur pass.
   const box = useMemo(() => {
     scene.rotation.y = MODEL_TURN;
+    scene.position.set(0, 0, 0);
+    const turned = new Box3().setFromObject(scene);
+    const center = turned.getCenter(new Vector3());
+    scene.position.set(-center.x, -turned.min.y, -center.z);
     return new Box3().setFromObject(scene);
   }, [scene]);
 
@@ -56,11 +71,11 @@ const Wardrobe = ({ animate, onReady }) => {
     <>
       <primitive ref={group} object={scene} />
       <ContactShadows
-        position={[box.getCenter(new Vector3()).x, box.min.y, box.getCenter(new Vector3()).z]}
+        position={[0, -size.y * SHADOW_DROP, 0]}
         scale={Math.max(size.x, size.z) * 1.8}
-        opacity={0.45}
-        blur={2.4}
-        far={size.y / 3}
+        opacity={SHADOW_OPACITY}
+        blur={SHADOW_BLUR}
+        far={size.y * SHADOW_REACH}
       />
     </>
   );
