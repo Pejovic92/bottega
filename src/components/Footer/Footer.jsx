@@ -51,13 +51,14 @@ const linkClass = "transition-colors hover:text-[#5E3D25] hover:underline underl
 // A shortened version of a common furniture-maker footer: on the left the logo, one line about
 // Bottega and the contact details (email, phone, Instagram); then link columns with small
 // letter-spaced titles: the products, and the gallery with the places Bottega works in below it.
-// Under everything a thin green line and the copyright.
+// Under everything a thin green line, then the copyright and the credit for the hero's 3D model:
+// side by side on desktop, one under the other on phones.
 // It sits on the navbar's off-white band, so the page starts and ends on the same colour, and it
 // stands apart from the green quote band above. Phones: the logo and contacts on top, the two link
 // columns side by side below; desktop: three columns.
 // The contact block carries id="kontakt", for a "Kontakt" link in the navbar. The gallery link
 // (#galerija) has no target yet.
-// Text: #26272E at 80% is 7.4:1 on #F9F7F2, the brown titles 9.0:1, the copyright (75%) 6.3:1.
+// Text: #26272E at 80% is 7.4:1 on #F9F7F2, the brown titles 9.0:1, the copyright line (75%) 6.3:1.
 const Footer = () => {
   return (
     <footer className="bg-[#F9F7F2] text-[#26272E]">
@@ -134,8 +135,30 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-[#BDC1AF] pt-6 font-ledger text-[13px] text-[#26272E]/75">
-          © {new Date().getFullYear()} Bottega. Sva prava zadržana.
+        <div className="mt-12 flex flex-col gap-2 border-t border-[#BDC1AF] pt-6 font-ledger text-[13px] text-[#26272E]/75 lg:flex-row lg:justify-between lg:gap-8">
+          <p>© {new Date().getFullYear()} Bottega. Sva prava zadržana.</p>
+          {/* The hero's 3D wardrobe is licensed CC BY 4.0, which requires this credit as long as
+              the model is used. Its links are underlined because they sit inside a sentence. */}
+          <p>
+            3D model ormara:{" "}
+            <a
+              href="https://sketchfab.com/3d-models/wardrobe-25122-ede879655ff444a2831dde070370b20c"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 transition-colors hover:text-[#5E3D25]"
+            >
+              Wardrobe 25122
+            </a>
+            , autor saintkastiell, licenca{" "}
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 transition-colors hover:text-[#5E3D25]"
+            >
+              CC BY 4.0
+            </a>
+          </p>
         </div>
       </div>
     </footer>

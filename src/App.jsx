@@ -18,17 +18,18 @@ import QuoteDialog from "./components/Quote/QuoteDialog";
 const App = () => {
   // The quote questionnaire lives here, once, so any button on the page can open it.
   const [quoteOpen, setQuoteOpen] = useState(false);
+  const openQuote = useCallback(() => setQuoteOpen(true), []);
   const closeQuote = useCallback(() => setQuoteOpen(false), []);
 
   return (
     <div>
-      {/* Text is darker than headlinesColor to keep 4.5:1 contrast on the dark end of the gradient.
+      {/* Text is darker than headlinesColor to keep 4.5:1 contrast on the hero's green.
           On desktop the hero is at most 60% as tall as the window is wide: the 3D wardrobe grows
           with the hero's height, so on tall, narrow windows it would be cut off on the right. It is
           also clipped sideways, because the wardrobe's box sticks out past the right edge. */}
       <div className="relative isolate flex min-h-[85svh] flex-col overflow-x-clip text-[#26272E] lg:min-h-[min(85svh,60vw)]">
         <Navbar />
-        <HomepageMain />
+        <HomepageMain onRequestQuote={openQuote} />
         <HomepageBackgroundVideo />
       </div>
       <HomepageStatement />
@@ -41,7 +42,7 @@ const App = () => {
       */}
       <HomepageProducts />
       <HomepageProcess />
-      <HomepageQuote onRequestQuote={() => setQuoteOpen(true)} />
+      <HomepageQuote onRequestQuote={openQuote} />
       <Footer />
       <QuoteDialog open={quoteOpen} onClose={closeQuote} />
     </div>

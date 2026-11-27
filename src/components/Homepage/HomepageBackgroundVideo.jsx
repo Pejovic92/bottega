@@ -19,9 +19,10 @@ class KeepPosterOnError extends Component {
 
 KeepPosterOnError.propTypes = { children: PropTypes.node };
 
-// The hero background goes from a light sage behind the text to a darker green behind the wardrobe
-// (the original greens, lightened twice by mixing with 20% white). Nothing is rendered onto them any
-// more, so they can be changed freely; the text keeps over 4.5:1 contrast down to #989D82.
+// The hero background is one flat sage green, #BDC1AF, like the flat bands of the other sections.
+// It used to fade from a lighter green (#D3D5CA) behind the text to this one behind the wardrobe,
+// to match the old video's background. The model and its still are transparent, so the colour can
+// change freely, but not darker: the brown and the hero's sentence are only about 5.2:1 on it.
 // The wardrobe is a 3D model on a transparent background; until it loads, a still of its
 // first frame stands in. The still is rendered wider than the box on any screen, so object-cover
 // only crops its empty sides and the wardrobe sits exactly where the model will appear.
@@ -30,14 +31,15 @@ KeepPosterOnError.propTypes = { children: PropTypes.node };
 // taller on short windows, the wardrobe would otherwise grow and move left into the text.
 // The box is also pushed 10% past the right edge (the hero clips it), which moves the wardrobe away
 // from the text on narrower desktops.
+// The model is licensed CC BY 4.0, which requires crediting its author: the credit is in the footer.
 const boxClasses =
   "relative h-[45svh] w-full lg:absolute lg:right-0 lg:top-20 lg:-z-10 lg:h-[calc(min(85svh,60vw)_-_5rem)] lg:w-3/5 lg:translate-x-[10%]";
 
 // Setting up the 3D model keeps the browser busy for a moment, which would freeze the hero text's
-// entrance animation (see HomepageMain; it ends after about 2.6 s). So the model starts loading
+// entrance animation (see HomepageMain; it ends after about 1.9 s). So the model starts loading
 // only once that is over; until then the poster shows the same picture. Without the animation
 // (reduced motion) there is nothing to wait for.
-const MODEL_LOAD_DELAY = 2700;
+const MODEL_LOAD_DELAY = 2000;
 
 const HomepageBackgroundVideo = () => {
   const [loadModel, setLoadModel] = useState(false);
@@ -54,7 +56,7 @@ const HomepageBackgroundVideo = () => {
     <>
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-20 bg-gradient-to-b from-[#D3D5CA] from-10% to-[#BDC1AF] to-50% lg:bg-gradient-to-r lg:to-55%"
+        className="absolute inset-0 -z-20 bg-[#BDC1AF]"
       />
       <div aria-hidden="true" className={boxClasses}>
         <img
@@ -73,22 +75,6 @@ const HomepageBackgroundVideo = () => {
           </KeepPosterOnError>
         )}
       </div>
-      {/* The model's CC BY 4.0 license requires crediting its author. */}
-      <p className="px-4 pb-3 text-right text-xs sm:px-8 lg:absolute lg:bottom-3 lg:right-16 lg:p-0">
-        3D model:{" "}
-        <a
-          className="underline"
-          href="https://sketchfab.com/3d-models/wardrobe-25122-ede879655ff444a2831dde070370b20c"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Wardrobe 25122
-        </a>
-        , saintkastiell,{" "}
-        <a className="underline" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">
-          CC BY 4.0
-        </a>
-      </p>
     </>
   );
 };
